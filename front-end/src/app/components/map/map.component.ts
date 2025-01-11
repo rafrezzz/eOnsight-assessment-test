@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { HubeauService } from '../../services/hubeau.service';
+import { BridgeService, Bridge } from '../../services/bridge.service';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { SwitchComponent } from '../switch/switch.component';
 
@@ -18,11 +19,15 @@ export class MapComponent implements OnInit {
   private markers: L.Marker[] = []; // Stocker les marqueurs pour gestion dynamique
   private stations: any[] = []; // Stocker toutes les stations
 
-  constructor(private hubeauService: HubeauService) {}
+  constructor(
+    private hubeauService: HubeauService,
+    private bridgeService: BridgeService
+  ) {}
 
   ngOnInit(): void {
     this.initMap();
     this.loadStations();
+    this.loadBridges();
   }
 
   private initMap(): void {
@@ -54,6 +59,38 @@ export class MapComponent implements OnInit {
         console.error('Erreur lors du chargement des stations', err);
       },
     });
+  }
+
+  private loadBridges(): void {
+    this.bridgeService.getBridges().subscribe({
+      next: (bridges: Bridge[]) => {
+        bridges.forEach((bridge) => {
+          const [lng, lat] = this.parseLocation(bridge.location);
+
+          L.marker([lat, lng], {
+            icon: L.icon({
+              iconUrl: 'bridge_marker.svg', 
+              iconSize: [30, 30], 
+              iconAnchor: [15, 15], 
+            }),
+          })
+            .addTo(this.map)
+            .bindPopup(`<strong>${bridge.name}</strong>`);
+        });
+      },
+      error: (err) => console.error('Erreur lors du chargement des ponts', err),
+    });
+  }
+
+  private parseLocation(location: string): [number, number] {
+    // Extraire les coordonnées de la chaîne "location" : "SRID=4326;POINT (lng lat)"
+    const match = location.match(/POINT \(([\d.-]+) ([\d.-]+)\)/);
+    if (match) {
+      const lng = parseFloat(match[1]);
+      const lat = parseFloat(match[2]);
+      return [lng, lat];
+    }
+    throw new Error('Format de localisation invalide');
   }
 
   private updateMarkers(): void {
