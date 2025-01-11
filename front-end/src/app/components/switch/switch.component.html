@@ -1,0 +1,21 @@
+<label
+  for="toggleSwitch"
+  class="flex items-center cursor-pointer select-none text-dark"
+>
+  <div class="relative">
+    <input
+      type="checkbox"
+      id="toggleSwitch"
+      class="peer sr-only"
+      [checked]="isChecked"
+      (change)="onToggle($event)"
+    />
+    <div
+      class="block h-6 w-10 rounded-full transition bg-secondary peer-checked:bg-blue-500"
+    ></div>
+    <div
+      class="absolute flex items-center justify-center w-4 h-4 transition bg-white rounded-full dot left-1 top-1 peer-checked:translate-x-4"
+    ></div>
+  </div>
+  <span class="ml-2 text-sm">Afficher uniquement les stations en service</span>
+</label>

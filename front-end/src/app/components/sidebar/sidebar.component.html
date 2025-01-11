@@ -1,0 +1,21 @@
+<div class="sidebar h-full w-80 bg-gray-100 p-4">
+    <ng-container *ngIf="selectedStation; else noStation">
+    <h2 class="text-lg font-bold mb-8 text-center">Infos générales</h2>
+      <div class="mb-8">
+        <p class="data"><strong>Nom :</strong> {{ selectedStation.libelle_station }}</p>
+        <p class="data"><strong>Commune :</strong> {{ selectedStation.libelle_commune }}</p>
+        <p class="data"><strong>En service :</strong> {{ selectedStation.en_service ? 'Oui' : 'Non' }}</p>
+        <p class="data"><strong>Longitude :</strong> {{ selectedStation.geometry.coordinates[0] }}</p>
+        <p class="data"><strong>Latitude :</strong> {{ selectedStation.geometry.coordinates[1] }}</p>
+        <p class="data"><strong>Date de dernière mise à jour :</strong> {{ selectedStation.date_maj_station | date:'dd/MM/yyyy' }}</p>
+      </div>
+  
+      <h2 class="text-lg font-bold mb-8 text-center">Variation du niveau d'eau</h2>
+    </ng-container>
+  
+    <ng-template #noStation>
+      <div class="flex items-center justify-center h-full text-center">
+        <p>Sélectionnez une station pour voir les détails</p>
+      </div>
+    </ng-template>
+  </div>

@@ -1,0 +1,12 @@
+<div class="relative h-screen w-screen">
+    <!-- Switch pour afficher/masquer les stations non opérationnelles -->
+    <div class="absolute top-4 right-4 z-10">
+      <app-switch (toggleChange)="toggleOperationalStations($event)"></app-switch>
+    </div>
+  
+    <!-- Sidebar pour afficher les informations des stations -->
+    <app-sidebar class="absolute top-0 left-0 z-20" [selectedStation]="selectedStation"></app-sidebar>
+  
+    <!-- Carte Leaflet -->
+    <div id="map" class="h-full w-full"></div>
+  </div>
