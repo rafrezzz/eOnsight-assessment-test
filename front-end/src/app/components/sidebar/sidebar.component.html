@@ -1,21 +1,24 @@
-<div class="sidebar h-full w-80 bg-gray-100 p-4">
-    <ng-container *ngIf="selectedStation; else noStation">
-    <h2 class="text-lg font-bold mb-8 text-center">Infos générales</h2>
-      <div class="mb-8">
-        <p class="data"><strong>Nom :</strong> {{ selectedStation.libelle_station }}</p>
-        <p class="data"><strong>Commune :</strong> {{ selectedStation.libelle_commune }}</p>
-        <p class="data"><strong>En service :</strong> {{ selectedStation.en_service ? 'Oui' : 'Non' }}</p>
-        <p class="data"><strong>Longitude :</strong> {{ selectedStation.geometry.coordinates[0] }}</p>
-        <p class="data"><strong>Latitude :</strong> {{ selectedStation.geometry.coordinates[1] }}</p>
-        <p class="data"><strong>Date de dernière mise à jour :</strong> {{ selectedStation.date_maj_station | date:'dd/MM/yyyy' }}</p>
-      </div>
-  
-      <h2 class="text-lg font-bold mb-8 text-center">Variation du niveau d'eau</h2>
+<div class="sidebar bg-white rounded-2xl shadow-lg z-50 overflow-y-scroll">
+    <ng-container *ngIf="selectedStation; else noStation"> 
+        <div class="flex flex-col">
+            <h2 class="text-lg font-bold mb-8 text-center text-primary">Infos générales</h2>
+            <div class="mb-20">
+                <p class="data"><strong>Nom :</strong> {{ selectedStation.libelle_station }}</p>
+                <p class="data"><strong>Commune :</strong> {{ selectedStation.libelle_commune }}</p>
+                <p class="data"><strong>En service :</strong> {{ selectedStation.en_service ? 'Oui' : 'Non' }}</p>
+                <p class="data"><strong>Longitude :</strong> {{ selectedStation.geometry.coordinates[0] }}</p>
+                <p class="data"><strong>Latitude :</strong> {{ selectedStation.geometry.coordinates[1] }}</p>
+            </div>
+        </div>
+        <div class="flex flex-col">
+            <h2 class="text-lg font-bold text-center text-primary mb-8">Variation du niveau d'eau</h2>
+            <app-graph [selectedStation]="selectedStation"></app-graph>
+        </div>
     </ng-container>
   
     <ng-template #noStation>
       <div class="flex items-center justify-center h-full text-center">
-        <p>Sélectionnez une station pour voir les détails</p>
+        <p>Sélectionnez une station pour voir ses détails</p>
       </div>
     </ng-template>
   </div>

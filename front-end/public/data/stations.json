@@ -1,0 +1,148 @@
+{
+  "data": [
+    {
+      "code_station": "X240501001",
+      "libelle_station": "La Lane à Valderoure [Malamaire]",
+      "libelle_commune": "VALDEROURE",
+      "longitude_station": 6.664341306,
+      "latitude_station": 43.789590526,
+      "en_service": true,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.664341306, 43.789590526]
+      }
+    },
+    {
+      "code_station": "X240502002",
+      "libelle_station": "La Siagne à Saint-Cézaire",
+      "libelle_commune": "SAINT-CEZAIRE-SUR-SIAGNE",
+      "longitude_station": 6.78891234,
+      "latitude_station": 43.7054321,
+      "en_service": true,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.78891234, 43.7054321]
+      }
+    },
+    {
+      "code_station": "X240503003",
+      "libelle_station": "La Brague à Biot",
+      "libelle_commune": "BIOT",
+      "longitude_station": 7.10234134,
+      "latitude_station": 43.63042342,
+      "en_service": true,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.10234134, 43.63042342]
+      }
+    },
+    {
+      "code_station": "X240504004",
+      "libelle_station": "Le Loup à Villeneuve-Loubet",
+      "libelle_commune": "VILLENEUVE-LOUBET",
+      "longitude_station": 7.13412341,
+      "latitude_station": 43.63876234,
+      "en_service": true,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.13412341, 43.63876234]
+      }
+    },
+    {
+      "code_station": "X240505005",
+      "libelle_station": "La Cagne à Cagnes-sur-Mer",
+      "libelle_commune": "CAGNES-SUR-MER",
+      "longitude_station": 7.1465623,
+      "latitude_station": 43.6695423,
+      "en_service": true,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.1465623, 43.6695423]
+      }
+    },
+    {
+      "code_station": "X240506006",
+      "libelle_station": "Le Paillon à Nice",
+      "libelle_commune": "NICE",
+      "longitude_station": 7.2456234,
+      "latitude_station": 43.7078324,
+      "en_service": true,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.2456234, 43.7078324]
+      }
+    },
+    {
+      "code_station": "X240507007",
+      "libelle_station": "La Roya à Breil-sur-Roya",
+      "libelle_commune": "BREIL-SUR-ROYA",
+      "longitude_station": 7.5162341,
+      "latitude_station": 43.9442341,
+      "en_service": true,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.5162341, 43.9442341]
+      }
+    },
+    {
+      "code_station": "X240508008",
+      "libelle_station": "La Vésubie à Saint-Martin-Vésubie",
+      "libelle_commune": "SAINT-MARTIN-VÉSUBIE",
+      "longitude_station": 7.2576234,
+      "latitude_station": 44.0672342,
+      "en_service": true,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.2576234, 44.0672342]
+      }
+    },
+    {
+      "code_station": "X240509009",
+      "libelle_station": "La Tinée à Isola",
+      "libelle_commune": "ISOLA",
+      "longitude_station": 7.1774324,
+      "latitude_station": 44.1835234,
+      "en_service": true,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.1774324, 44.1835234]
+      }
+    },
+    {
+      "code_station": "X240510010",
+      "libelle_station": "La Siagne à Escragnolles",
+      "libelle_commune": "ESCRAGNOLLES",
+      "longitude_station": 6.8135623,
+      "latitude_station": 43.7442134,
+      "en_service": true,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.8135623, 43.7442134]
+      }
+    },
+    {
+      "code_station": "X240511011",
+      "libelle_station": "Le Var à Carros",
+      "libelle_commune": "CARROS",
+      "longitude_station": 7.1883241,
+      "latitude_station": 43.7852134,
+      "en_service": false,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.1883241, 43.7852134]
+      }
+    },
+    {
+      "code_station": "X240512012",
+      "libelle_station": "Le Var à Entrevaux",
+      "libelle_commune": "ENTREVAUX",
+      "longitude_station": 6.8102341,
+      "latitude_station": 43.9598341,
+      "en_service": false,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.8102341, 43.9598341]
+      }
+    }
+  ]
+}

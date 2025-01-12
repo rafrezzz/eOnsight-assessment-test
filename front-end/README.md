@@ -1,7 +1,5 @@
 # FrontEnd
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
-
 ## Development server
 
 To start a local development server, run:
@@ -10,50 +8,26 @@ To start a local development server, run:
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files. 
 
-## Code scaffolding
+**Note:** Ensure your local backend bridges API is running to display the bridge-related data properly.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-```bash
-ng generate component component-name
-```
+## Handling Hubeau API Issues  
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+As of January 12, 2025, the Hubeau API has been experiencing issues, making it non-functional. To ensure the application remains operational, JSON data has been added to the public folder to simulate the API responses.
 
-```bash
-ng generate --help
-```
+### Key Adjustments :
 
-## Building
+- Parts of the application have been modified to use these local JSON files as a fallback.
+- The original code for API interaction has been preserved and is commented out for future use.
 
-To build the project run:
+### Switching Back to the API
 
-```bash
-ng build
-```
+If the Hubeau API becomes operational again:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- Uncomment the original code for API interaction
 
-## Running unit tests
+- Comment out the fallback code using the JSON files
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- The app should then function correctly with real-time API data

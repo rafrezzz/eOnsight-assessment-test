@@ -1,0 +1,22 @@
+<div class="w-full flex flex-col justify-center items-center"> 
+
+    <div *ngIf="isLoading" class="flex flex-col items-center justify-center text-center text-secondary mt-28">
+      <div class="loader"></div>
+      <p>Chargement des données...</p>
+    </div>
+
+    <div *ngIf="!isLoading && hasData">
+      <canvas
+        baseChart
+        [datasets]="chartData"
+        [labels]="chartLabels"
+        [options]="chartOptions"
+        [type]="'line'"
+      ></canvas>
+    </div>
+
+    <div *ngIf="!isLoading && !hasData" class="mt-28">
+      <p class="text-secondary">Aucune donnée disponible pour cette station</p>
+    </div>
+
+  </div>

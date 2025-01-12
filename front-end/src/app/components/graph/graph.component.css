@@ -1,0 +1,36 @@
+  canvas {
+    width: 100% !important; /* 100% de la largeur pour le canvas */
+    height: 100% !important; /* 100% de la hauteur pour le canvas */
+  }
+
+  .loader {
+    width: 45px;
+    height: 40px;
+    background: linear-gradient(
+        #fff calc(1 * 100% / 6),
+        #3C7CCC 0 calc(3 * 100% / 6),
+        #fff 0
+      ),
+      linear-gradient(
+        #fff calc(2 * 100% / 6),
+        #3C7CCC 0 calc(4 * 100% / 6),
+        #fff 0
+      ),
+      linear-gradient(
+        #fff calc(3 * 100% / 6),
+        #3C7CCC 0 calc(5 * 100% / 6),
+        #fff 0
+      );
+    background-size: 10px 400%;
+    background-repeat: no-repeat;
+    animation: matrix 1s infinite linear;
+  }
+  
+  @keyframes matrix {
+    0% {
+      background-position: 0% 100%, 50% 100%, 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%, 50% 0%, 100% 0%;
+    }
+  }
