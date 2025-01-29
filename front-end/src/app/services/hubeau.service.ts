@@ -16,8 +16,8 @@ export class HubeauService {
   private observationsApiUrl = 'https://hubeau.eaufrance.fr/api/v2/hydrometrie/observations_tr';
 
   // Local JSON file URLs for simulated data
-  private localStationsUrl = 'data/stations.json';
-  private localObservationsUrl = 'data/observations.json';
+  //private localStationsUrl = 'data/stations.json';
+  //private localObservationsUrl = 'data/observations.json';
 
   constructor(private http: HttpClient) {}
 
@@ -27,11 +27,11 @@ export class HubeauService {
    * @returns An Observable containing stations data.
    */
   getStations(): Observable<any> {
-    console.warn('Loading simulated stations data.');
-    return this.http.get<any>(this.localStationsUrl);
+  
+    //console.warn('Loading simulated stations data.');
+    //return this.http.get<any>(this.localStationsUrl);
 
-    // Uncomment the line below to use the Hubeau API instead of local data
-    // return this.http.get<any>(`${this.stationsApiUrl}?code_departement=06&format=json`);
+    return this.http.get<any>(`${this.stationsApiUrl}?code_departement=06&format=json`);
   }
 
   /**
@@ -44,15 +44,16 @@ export class HubeauService {
    */
   getObservations(codeStation: string, startDate: string, endDate: string): Observable<any[]> {
     console.warn('Loading simulated observations data.');
+    
+    /*
     return this.http.get<{ data: any[] }>(this.localObservationsUrl).pipe(
       map((response) =>
         // Filter observations by the selected station code
         response.data.filter((obs) => obs.code_station === codeStation)
       )
     );
+    */
 
-    // Uncomment the block below to use the Hubeau API instead of local data
-    /*
     const params = {
       code_entite: codeStation,
       grandeur_hydro: 'H', // Type of measurement (e.g., water level)
@@ -65,6 +66,5 @@ export class HubeauService {
     return this.http.get<{ data: any[] }>(this.observationsApiUrl, { params }).pipe(
       map((response) => response.data) // Extract data from the API response
     );
-    */
   }
 }

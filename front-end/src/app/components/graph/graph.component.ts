@@ -44,16 +44,15 @@ export class GraphComponent implements OnChanges {
   public hasData = true; // Indicates if there is data to display
 
   // Set the start and end date to a fixed value because of the API issue
-  public startDate = '2025-01-05'; 
-  public endDate = '2025-01-11'; 
+  //public startDate = '2025-01-05'; 
+  //public endDate = '2025-01-11'; 
 
   // Dynamicly change the start and end date
-  //public startDate: string;
-  //public endDate: string;
+  public startDate!: string;
+  public endDate!: string;
 
   constructor(private hubeauService: HubeauService) {
-    // Not using dynamic dates because of the API issue 
-    // this.initializeDates();
+    this.initializeDates();
   }
 
   /**
